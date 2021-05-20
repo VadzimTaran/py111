@@ -45,7 +45,7 @@ def peek(ind: int = 0) -> Any:
     """
     print(ind)
 
-    if ind >= len(my_stack):
+    if ind not in range(len(my_stack)-1):
         return None
 
     return my_stack[-1-ind]
