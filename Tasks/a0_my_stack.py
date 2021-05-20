@@ -31,11 +31,8 @@ def pop() -> Any:
      O(1)
     """
 
-    popped_elem = None if not my_stack else my_stack[len(my_stack)-1]
-    my_stack.pop()
-
-    return popped_elem
-
+    if my_stack:
+        return my_stack.pop()
 
 def peek(ind: int = 0) -> Any:
     """
