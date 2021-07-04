@@ -26,4 +26,13 @@ def factorial_iterative(n: int) -> int:
     :return: factorial of n
     """
     print(n)
-    return 0
+
+    if n < 0:
+        raise ValueError
+
+    res = 1
+
+    for i in range(2, n+1):
+        res *= i
+
+    return res
