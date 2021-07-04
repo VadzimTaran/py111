@@ -13,14 +13,18 @@ def binary_search(elem: int, arr: Sequence) -> Optional[int]:
 
     start = 0
     end = len(arr) - 1
-    mid = 0
 
     while start <= end:
         mid = start // 2 + end // 2
 
+        # find elem
         if arr[mid] == elem:
+            # find first (left) occurrence
+            while arr[mid-1] == elem:
+                mid -= 1
             return mid
-        elif arr[mid] > elem:
+
+        if arr[mid] > elem:
             end = mid - 1
         else:
             start = mid + 1
