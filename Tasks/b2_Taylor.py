@@ -3,8 +3,11 @@ Taylor series
 """
 from typing import Union
 from math import factorial
+from itertools import count
+
 
 DELTA = 0.0001
+
 
 def ex(x: Union[int, float]) -> float:
     """
@@ -39,12 +42,14 @@ def sinx(x: Union[int, float]) -> float:
         return ((-1) ** (n + 1)) * (x ** (2 * n - 1)) / factorial(2 * n - 1)
 
     res = 0
-    n = 1 # Todo itertools: count
-    while True:
+    # n = 1  
+    # while True:
+    # itertools
+    for n in count(1):
         current_elem = _get_item(n)
         if abs(current_elem) < DELTA:
             break
         res += current_elem
-        n += 1
+    #     n += 1
 
     return res
