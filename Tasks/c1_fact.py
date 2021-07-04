@@ -6,6 +6,9 @@ def factorial_recursive(n: int) -> int:
     """
     print(n)
 
+    if n < 0:
+        raise ValueError
+
     if n == 0:
         return 1
 
