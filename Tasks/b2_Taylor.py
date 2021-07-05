@@ -17,7 +17,19 @@ def ex(x: Union[int, float]) -> float:
     :return: e^x value
     """
     print(x)
-    return 0
+
+    res = 0
+    # n = 1
+    # while True:
+    # itertools
+    for n in count(0):
+        current_elem = (x ** n) / factorial(n)
+        if abs(current_elem) < DELTA:
+            break
+        res += current_elem
+    #     n += 1
+
+    return res
 
 
 def sinx(x: Union[int, float]) -> float:
