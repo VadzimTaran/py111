@@ -11,12 +11,12 @@ def sort(container: List[int]) -> List[int]:
     #print(container)
 
     # go through the whole list
-    for _ in range(0, len(container) - 1):
-        for j in range(len(container) - 1):
+    for i in range(0, len(container) - 1):
+        # range can be shorten by i because max value is shifted to the most right place
+        for j in range(len(container) - i - 1):
             if container[j] > container[j + 1]:
-                temp = container[j]
-                container[j] = container[j + 1]
-                container[j + 1] = temp
+                # swap in python's way
+                container[j], container[j + 1] = container[j + 1], container[j]
 
     #print(container)
 
